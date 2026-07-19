@@ -1,6 +1,7 @@
 # NidhiManager
 ![Status](https://img.shields.io/badge/status-prototype-blue)
 ![Hackathon](https://img.shields.io/badge/NABARD%20Hackathon-GFF%202026-teal)
+
 **AI-Powered Cash Flow Prediction & Risk Flagging Platform for Rural Micro Enterprises**
 
 Built for the **NABARD Hackathon @ Global Fintech Fest 2026**
