@@ -230,9 +230,9 @@ flutter run
 ## Team
 | Name | Role | Organization |
 |---|---|---|
-| Ritesh Kulkarni | SVKM NMIMS Global University, STME |
-| Amit Tipare | SVKM NMIMS Global University, STME |
-| Om Gavhane | SVKM NMIMS Global University, STME |
+| Ritesh Kulkarni | Backend & ML | SVKM NMIMS Global University, STME |
+| Amit Tipare | Backend & ML | SVKM NMIMS Global University, STME |
+| Om Gavhane | Frontend | SVKM NMIMS Global University, STME |
 ---
 
 ## License
