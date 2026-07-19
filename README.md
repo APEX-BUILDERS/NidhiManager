@@ -226,13 +226,9 @@ flutter run
 ---
 
 ## Team
-
-| Name || Organization |
-|---||---|
-| Ritesh Kulkarni || [SVKM NMIMS GLOBAL UNIVERSITY STME] |
-| Amit Tipare || [SVKM NMIMS GLOBAL UNIVERSITY STME] |
-| Om Gavhane || [SVKM NMIMS GLOBAL UNIVERSITY STME] |
-
+1.Ritesh Kulkarni-[SVKM NMIMS GLOBAL UNIVERSITY STME]
+2.Amit Tipare-[SVKM NMIMS GLOBAL UNIVERSITY STME]
+3.Om Gavhane-[SVKM NMIMS GLOBAL UNIVERSITY STME]
 ---
 
 ## License
