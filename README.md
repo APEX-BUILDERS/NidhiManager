@@ -93,3 +93,147 @@ Rural livelihoods don't share a single risk profile, so NidhiManager weights eac
 ---
 
 ## System Architecture
+├─ Financial records (savings, loans, repayments) — mock dataset
+├─ UPI transaction pattern proxies — simulated
+├─ Market intelligence (commodity/crop prices, demand trends)
+└─ Climate & seasonal data (weather, monsoon patterns)
+│
+▼
+[Spring Boot API Layer — Data Ingestion & Normalization]
+│
+▼
+[Sector-Specific Feature Engineering]
+(dairy / poultry / food processing / handicrafts / rural retail)
+│
+▼
+[AI/ML Core]
+├─ Cash-Flow Forecast Model (3–6 month horizon)
+└─ Risk Classification Model (early warning scoring)
+│
+├──────────────────────┬───────────────────────┐
+▼                                              ▼
+[Enterprise App View]                       [Field Officer Dashboard]
+(Flutter / React Native)                    (Flutter / React Native)
+│                                              │
+└──────────────────────┬───────────────────────┘
+▼
+[JWT + OAuth Access Control Layer]
+│
+▼
+[PostgreSQL — persistent storage]
+│
+▼
+[Offline-first Local Cache + Sync]
+(on-device storage, periodic low-bandwidth sync to
+Render / Railway / AWS backend)
+
+---
+
+## Tech Stack
+
+| Layer | Technology | Why |
+|---|---|---|
+| **Frontend** | Flutter (or React Native) | Single cross-platform codebase for enterprise & field-officer apps; offline-first support |
+| **Backend** | Spring Boot (Java) | Mature, strongly-typed REST API layer; integrates well with banking/NBFC systems |
+| **Database** | PostgreSQL | Relational storage for financial records, profiles, and forecast history |
+| **AI/ML Layer** | Time-series forecasting (Prophet/LSTM) + gradient-boosted classifier (XGBoost/LightGBM) | Cash-flow prediction + risk classification |
+| **Authentication** | JWT + OAuth | Secure, stateless, role-based access for enterprises vs. field officers |
+| **Hosting** | Render / Railway / AWS (free tier) | Cost-efficient deployment for prototype and pilot stage |
+
+---
+
+## Project Structure
+nidhimanager/
+├── mobile-app/              # Flutter / React Native frontend
+│   ├── enterprise/          # Enterprise-facing screens
+│   └── field-officer/       # Field officer dashboard screens
+├── backend/                 # Spring Boot application
+│   ├── src/main/java/       # Controllers, services, repositories
+│   └── src/main/resources/  # application.yml, config
+├── ml-models/                # Forecasting & risk classification models
+│   ├── cashflow-forecast/
+│   └── risk-classifier/
+├── data/                     # Mock/simulated datasets
+├── docs/                     # Architecture diagrams, submission materials
+└── README.md
+
+> **Note:** This structure reflects the planned layout for the prototype phase. Folders will be populated as development progresses through the hackathon timeline.
+
+---
+
+## Getting Started
+
+> This section will be completed as the prototype is built out during the Prototype Development Period (25 July – 15 Aug 2026).
+
+### Prerequisites
+- Flutter SDK or Node.js (for React Native)
+- Java 17+ and Maven/Gradle
+- PostgreSQL 14+
+
+### Setup (planned)
+```bash
+# Clone the repository
+git clone https://github.com/<your-org>/nidhimanager.git
+cd nidhimanager
+
+# Backend
+cd backend
+./mvnw spring-boot:run
+
+# Frontend
+cd ../mobile-app
+flutter pub get
+flutter run
+```
+
+---
+
+## Data & Privacy
+
+- The prototype uses **mock/simulated datasets** for financial records and UPI transaction proxies — no real user financial data is accessed or stored.
+- UPI/transaction signals are used as **aggregated behavioural patterns**, not raw, personally identifiable account data.
+- Designed to work **offline / in low-network conditions**, syncing only when connectivity allows.
+
+---
+
+## Roadmap
+
+- [x] Idea submission & architecture design
+- [ ] Prototype: Enterprise app (Flutter/React Native)
+- [ ] Prototype: Field officer dashboard
+- [ ] Cash-flow forecasting model (v1)
+- [ ] Risk classification model (v1)
+- [ ] Sector-specific model weighting (dairy, poultry, food processing, handicrafts, retail)
+- [ ] Multilingual support (Hindi + regional languages)
+- [ ] Pilot deployment with a partner bank/RRB/MFI
+
+---
+
+## Value to NABARD
+
+1. **Enhanced Credit Flow** — reliable forecasts and risk profiles strengthen bank credit appraisal for underserved rural enterprises.
+2. **Credit-Led Rural Development** — enterprises build a verifiable repayment track record, shifting from grant dependency to formal credit.
+3. **Digital Public Good** — a common infrastructure layer for enterprise profiling, cash-flow assessment, and risk monitoring.
+4. **Better Beneficiary Outcomes** — actionable, plain-language insights placed directly in the hands of rural entrepreneurs and field officers.
+
+---
+
+## Team
+
+| Name | Role | Organization |
+|---|---|---|
+| _Your Name_ | _Role_ | _Organization_ |
+| _Teammate_ | _Role_ | _Organization_ |
+| _Teammate_ | _Role_ | _Organization_ |
+
+---
+
+## License
+
+This project is submitted as part of the NABARD Hackathon @ Global Fintech Fest 2026. License to be finalized post-hackathon.
+
+---
+
+<p align="center">
+  <i>NidhiManager — predictive, proactive, and built for the field.</i>
+</p>
